@@ -1,0 +1,20 @@
+<div class="row ">
+    <div>
+        {{ item.Id }}
+    </div>
+    <div>
+        {{ item.Descripcion }}
+    </div>
+    <div>
+        {{ item.Precio | currency }}
+    </div>
+    <div>
+        {{ item.Cantidad }}
+    </div>
+    <div>
+        {{ item.CategoriaID }}
+    </div>
+    <div>
+        <button (click)="onDelete(item)">Eliminar</button>
+    </div>
+</div>

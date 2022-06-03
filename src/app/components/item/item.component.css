@@ -1,0 +1,7 @@
+.row{
+    display: flex;
+    box-sizing: border-box;
+}
+div{
+    padding-right: 5px;
+}
