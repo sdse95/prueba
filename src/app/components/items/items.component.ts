@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/Models/item';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-items',
@@ -10,31 +11,19 @@ export class ItemsComponent implements OnInit {
 
   items: Item[]= [];
 
-  constructor() { }
+  constructor(private itemService:ItemService) { }
 
   ngOnInit(): void {
-    this.items = [
-    {
-      Id:0,
-      Descripcion: 'Descripcion de Item 0',
-      Precio: 10,
-      Cantidad: 1,
-      CategoriaID: 'Categoria de ID 0'
-    },
-    {
-      Id:1,
-      Descripcion: 'Descripcion de Item 1',
-      Precio: 13,
-      Cantidad: 4,
-      CategoriaID: 'Categoria de ID 1'
-    }
-          
-
-    ];
+    //this.items = [];
+    //this.items = this.itemService.getItems();
+    this.itemService.getItems().subscribe(data => {
+      this.items = data;
+    })
   }
 
   deleteItem(item:Item){
     this.items = this.items.filter(x => x.Id != item.Id);
+    this.itemService.deleteItem(item).subscribe();
   }
 
 }

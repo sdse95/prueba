@@ -1,1 +1,29 @@
-<p>add-item works!</p>
+<form (ngSubmit)="onSubmit()">
+    <h2>Registrar un nuevo artículo</h2>
+    <div>
+        <label for="">ID</label>    
+        <input type="text" name="Id" id="" [(ngModel)]="Id">  
+    </div>
+    
+    <div>
+        <label for="">Descripcion</label>
+        <input type="text" name="Descripcion" id="" [(ngModel)]="Descripcion">
+    </div>
+    
+    <div>
+        <label for="">Precio</label>
+        <input type="number" name="Precio" id="" [(ngModel)]="Precio">
+    </div>
+
+    <div>
+        <label for="">Cantidad</label>
+        <input type="number" name="Cantidad" id="" [(ngModel)]="Cantidad">
+    </div>
+
+    <div>
+        <label for="">CategoriaID</label>
+        <input type="text" name="CategoriaID" id="" [(ngModel)]="CategoriaID">
+    </div>
+
+    <input type="submit" value="Crear">
+</form>
